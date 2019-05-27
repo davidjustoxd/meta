@@ -2,12 +2,12 @@
 body {
     margin:0;
     padding:0;
-    background-color:#2f353b ;
+    background-color:#D3D3D3 ;
 }
 
 /* Make Header Sticky */
 #header_container {
-    background:#eee;
+    background:white;
     border:1px solid #666;
     top:0%;
     height:5.2%;
@@ -29,7 +29,6 @@ body {
     margin:0 auto;
     overflow:auto;
     padding:6%;
-    width:940px;
 }
 #content{
 
@@ -38,7 +37,7 @@ body {
 
 /* Make Footer Sticky */
 #footer_container {
-    background:#eee;
+    background:white;
     border:1px solid #666;
     bottom:0;
     height:5.2%;
@@ -72,9 +71,6 @@ body {
 }
 #header  p a:active, #footer p a:active {
     background-color: black;
-}
-#header  p a:visited, #footer p a:visited {
-    background-color: #ccc;
 }
 
 

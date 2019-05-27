@@ -10,7 +10,6 @@ if (isset ($_POST['usuario'], $_POST ['pwd'])) {
 	$sql="SELECT * FROM usuarios WHERE nombreUsuario='$usuario' AND pwd='$pwd'";
 	$filas=$con->query($sql);
 	if ( $fila=$filas->fetch_assoc()){
-		$grupo=$fila['codGrupo'];
 		$administrador=$fila['administrador'];
 		session_name('meta');
 		session_start();
