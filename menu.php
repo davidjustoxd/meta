@@ -1,7 +1,8 @@
 <?php
-include 'sesion.php';
-include 'conexion.php';
-include 'functions.php'
+require 'sesion.php';
+require 'conexion.php';
+require 'functions.php';
+require'data.php';
 ?>
     <html>
     <head>
@@ -11,10 +12,11 @@ include 'functions.php'
     </head>
 <body>
 <?php
-include 'header.php';
+require 'header.php';
 ?>
-    <h1>Fichajes</h1>
+<div id="body">
     <div id="left">
+    <h1>Fichajes</h1>
         <table>
             <th>Nombre</th>
             <th>Apellidos</th>
@@ -26,12 +28,45 @@ include 'header.php';
                 <tr>
                     <td><?php echo $fila['nombre'] ?></td>
                     <td><?php echo $fila['apellido'] ?></td>
-                    <td><?php echo $fila['accion'] ?></td>
+                    <td <?php if ($fila['accion']=='Trabajando'){
+                            echo "style='color:green'";
+                            }
+                            elseif ($fila['accion']=='Fuera'){
+                            echo "style='color:red'";
+                            }
+                            elseif ($fila['accion']=='Pausa'){
+                            echo "style='color:yellow'";
+                            }?>
+                            >
+                    <?php echo $fila['accion'] ?></td>
                     <td><?php echo $fila['fechaAccion'] ?></td>
                 </tr>
             <?php } ?>
         </table>
     </div>
+<div id="right">
+<h1> Tu estado:
+<?php $estadofichaje= getEstadoFichaje($codUsuario);
+    if ( $fila=$estadofichaje->fetch_assoc()){
+        $estadofichaje=$fila['codAccion'];
+        switch ($estadofichaje) {
+            case 1:
+                echo " Trabajando</h1>";
+                echo $e1;
+                break;
+            case 2:
+                echo " En el descanso</h1>";
+                echo $e2;
+                break;
+            case 3:
+                echo " Fuera</h1>";
+                echo $e3;
+                break;
+        }
+    }
 
+    ?>
 
-</body><?php include 'footer.php';
+</div>
+</div>
+<?php include 'footer.php';

@@ -10,3 +10,5 @@
     <div class="parts"><p><a href="aboutmeta.php">Sobre Meta</a></p></div>
     </div>
 </div>
+</body>
+</html>
