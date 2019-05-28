@@ -146,7 +146,6 @@ margin-left:43%;;
 }
 #foru {
     float:right;
-    margin-top:10%;
     margin-bottom:10%;
     padding:1%;
     background-color: lightyellow;
@@ -154,4 +153,12 @@ margin-left:43%;;
     border-radius: 25px;
     text-align:right;
     margin-right:1%;
+}
+#textbox {
+    position:absolute;
+    width: 95.5%;
+    bottom:11.35%;
+}
+input[type=text] {
+    width:71.5%;
 }

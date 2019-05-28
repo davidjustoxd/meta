@@ -78,3 +78,10 @@ function recuperarMensajesChat($codFrom,$codTo){
     return $filas;
 
 }
+
+function insertarMensajeChat($texto,$from,$to){
+    global $con;
+    $sql = "INSERT INTO chat (codUsuarioFrom,texto,codUsuarioTo)
+            VALUES($from,'$texto',$to)";
+    $filas = $con->query($sql);
+}
