@@ -135,30 +135,43 @@ margin-left:43%;;
 
 #forme {
     float:left;
-    margin-top:10%;
-    margin-bottom:0%;
-    padding:1%;
-    background-color: lightyellow;
-    border: 2px solid red;
-    border-radius: 25px;
-    text-align:right;
+    margin-right:8px;
+    background-color: lightgreen;
     margin-left:1%;
 }
 #foru {
     float:right;
-    margin-bottom:10%;
-    padding:1%;
-    background-color: lightyellow;
-    border: 2px solid red;
-    border-radius: 25px;
-    text-align:right;
+    margin-left:8px;
+    background-color: lightgreen;
     margin-right:1%;
 }
 #textbox {
-    position:absolute;
-    width: 95.5%;
-    bottom:11.35%;
+    position:fixed;
+    bottom:11.2%;
+    width:94.3%;
 }
 input[type=text] {
     width:71.5%;
+}
+ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+ul li {
+    display:inline-block;
+    clear:both;
+    padding:20px;
+    border-radius:30px;
+    margin-bottom:1%;
+    text-align:right;
+}
+#foru:last-of-type {
+   margin-bottom:2%;
+}
+#forme:last-of-type {
+    margin-bottom:2%;
+}
+#lastmsg{
+    float:bottom;
 }

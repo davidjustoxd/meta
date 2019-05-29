@@ -35,7 +35,7 @@ require 'header.php';
         <?php
         $destinatarios = allUsuarios($codUsuario);
         while ($destinatario = $destinatarios->fetch_assoc()) { ?>
-            <a href="chat.php?d=<?php echo $destinatario['codigo'] ?>"><?php
+            <a href="chat.php?d=<?php echo $destinatario['codigo'] ?>#lastmsg"><?php
                 if ((isset($_GET['d'])) && ($destinatario['codigo'] == $_GET['d'])) {
                     echo "<strong>" . $destinatario['nombre'] . ' ' . $destinatario['apellido1'] . "</strong>";
                 } else {
@@ -51,6 +51,7 @@ require 'header.php';
         } else {
             $destinatario = $_GET['d'];
             $mensajes = recuperarMensajesChat($codUsuario, $destinatario);
+            echo "<ul>";
             while ($mensaje = $mensajes->fetch_assoc()) {
                 $texto = $mensaje['texto'];
                 $from = $mensaje['codUsuarioFrom'];
@@ -63,10 +64,9 @@ require 'header.php';
                     $id = "id='forme'";
                 }
                 ?>
-                <div id="msg"><p<?php echo " $id" ?>><?php echo $texto ?><br><?php echo $fechaprint; ?></p></div><br>
-
-
-            <?php } ?>
+                <li<?php echo " $id" ?>><?php echo $texto ?><br><?php echo $fechaprint; ?></li>
+            <?php } echo "<a id='lastmsg'></a>";
+                    echo "</ul>"; ?>
             <div id="textbox">
                 <form name="msg" onsubmit="return false">
                     <input type="text" id="text" name="text">

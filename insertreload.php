@@ -1,5 +1,6 @@
 <?php
-https://www.youtube.com/watch?v=wMlLgYyz_ws
+//https://www.youtube.com/watch?v=wMlLgYyz_ws
+//https://www.youtube.com/watch?v=oIVI1qYx87E
 require 'sesion.php';
 if ((!isset($_GET['texto'])) || (!isset($_GET['from'])) || (!isset($_GET['to']))){
     header ('Location:cerrarSesion.php');
