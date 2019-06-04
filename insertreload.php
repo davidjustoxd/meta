@@ -11,37 +11,33 @@ require 'functions.php';
 $texto=strip_tags($con -> real_escape_string($_GET['texto']));
 $from=strip_tags($con -> real_escape_string($_GET['from']));
 $to=strip_tags($con -> real_escape_string($_GET['to']));
-insertarMensajeChat($texto,$from,$to);
-
-$response = "<?php if (!isset(\$_GET\[\'d\'\])) {
-    echo \"<h1>Selecciona un destinatario para empezar a chatear</h1>\";
-} else {
-    \$destinatario = \$_GET\[\'d\'\];
-    \$mensajes = recuperarMensajesChat(\$codUsuario, \$destinatario);
-    while (\$mensaje = \$mensajes->fetch_assoc()) {
-        \$texto = \$mensaje\[\'texto\'\];
-        \$from = \$mensaje\[\'codUsuarioFrom\'\];
-        \$to = \$mensaje\[\'codUsuarioTo\'\];
-        \$fecha = \$mensaje\[\'fecha\'\];
-        \$fechaprint = substr(\$fecha, 11, 5);
-        if (\$from == \$codUsuario) {
-            \$id = \"id=\'foru\'\";
+if ($texto !=''){
+insertarMensajeChat($texto,$from,$to);}
+    $response='<ul>';
+    $mensajes = recuperarMensajesChat($from, $to);
+    while ($mensaje = $mensajes->fetch_assoc()) {
+        $texto = $mensaje['texto'];
+        $from = $mensaje['codUsuarioFrom'];
+        $to = $mensaje['codUsuarioTo'];
+        $fecha = $mensaje['fecha'];
+        $fechaprint = substr($fecha, 11, 5);
+        if ($from == $from) {
+            $id = "id='foru'  style='float:right; margin-left:8px; background-color: lightgreen; margin-right:1%'";
         } else {
-            \$id = \"id=\'forme\'\";
+            $id = "id='forme'  style='float:left; margin-right:8px; background-color: lightgreen; margin-left:1%'";
         }
-        ?>
-        <div id=\"msg\"><p<?php echo \" \$id\" ?>><?php echo \$texto ?><br><?php echo \$fechaprint; ?></p></div>
+
+       $response.="<li  $id > $texto <br> $fechaprint </li>";
 
 
-    <?php } ?>
-    <div id=\"textbox\">
-        <form name=\"msg\" onsubmit=\"return false\">
-            <input type=\"text\" id=\"text\" name=\"text\">
-            <input type=\"submit\" value=\"Enviar\" onclick=\"nuevoChat()\">
-        </form>
-    </div>
+ }
+    $response.= "<a id='lastmsg'></a>";
+    $response.="</ul>";
+    $response.="<div id='textbox'>";
+        $response.="<form name='msg' onsubmit='return false'>";
+            $response.="<input type='text' id='text' name='text'>";
+            $response.="<input type='submit' value='Enviar' onclick='nuevoChat()'>";
+        $response.="</form>";
 
-
-<?php } ?>";
 $json['chat']=$response;
 echo json_encode($json);

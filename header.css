@@ -9,61 +9,6 @@ body {
 }
 
 /* Make Header Sticky */
-#header_container {
-    background:white;
-    border:1px solid #666;
-    top:0%;
-    height:5.2%;
-    left:0;
-    position:fixed;
-    width:100%;
-}
-#header{
-
-    margin-top:0%;
-    width:100%;
-
-    display: flex;
-    justify-content: space-around;
-}
-
-/* Make Footer Sticky */
-#footer_container {
-    background:white;
-    border:1px solid #666;
-    bottom:0;
-    height:5.2%;
-    left:0;
-    position:fixed;
-    width:100%;
-    bottom:0;
-}
-
-#footer {
-    margin-top:0%;
-    width:100%;
-    display: flex;
-    justify-content: space-around;
-}
-
-#header p,a{
-   padding-left:1%;
-   padding-right:1%;
-}
-#header  p a, #footer p a {
-    background-color: red;
-    color: white;
-    padding: 1em 1.5em;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-#header  p a:hover, #footer p a:hover {
-    background-color: #555;
-}
-#header  p a:active, #footer p a:active {
-    background-color: black;
-}
 
 #left{
     float:left;
@@ -106,7 +51,7 @@ margin-left:43%;;
 }
 
 #allUsuarios{
-    float:left;
+    /*float:left;*/
     border:3px solid green;
     height:100%;
     width:20%;
@@ -115,63 +60,62 @@ margin-left:43%;;
     line-height: 50px;
     text-align: center;
     vertical-align: middle;
-}
-#contMensajesChat{
-    font-family: helvetica;
-    float:right;
-    border:3px solid green;
-    height:100%;
-    width:79.3%;
-    overflow: auto;
-}
-#contMensajesChat > p {
-    margin:5%;
+    position:relative;
 
 }
-#contMensajesChat > h1{
-    text-align:center;
-    margin-top:23%;
-}
-
-#forme {
-    float:left;
-    margin-right:8px;
-    background-color: lightgreen;
-    margin-left:1%;
-}
-#foru {
-    float:right;
-    margin-left:8px;
-    background-color: lightgreen;
-    margin-right:1%;
-}
-#textbox {
+#header_container {
+    background:white;
+    border:1px solid #666;
+    top:0;
+    height:5.2%;
+    left:0;
     position:fixed;
-    bottom:11.2%;
-    width:94.3%;
+    width:100%;
+    z-index:3;
 }
-input[type=text] {
-    width:71.5%;
+#header{
+
+    margin-top:0%;
+    width:100%;
+
+    display: flex;
+    justify-content: space-around;
 }
-ul {
-    list-style:none;
-    margin:0;
-    padding:0;
+
+/* Make Footer Sticky */
+#footer_container {
+    background:white;
+    border:1px solid #666;
+    bottom:0;
+    height:5.2%;
+    left:0;
+    position:fixed;
+    width:100%;
+    bottom:0;
 }
-ul li {
-    display:inline-block;
-    clear:both;
-    padding:20px;
-    border-radius:30px;
-    margin-bottom:1%;
-    text-align:right;
+
+#footer {
+    margin-top:0%;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
 }
-#foru:last-of-type {
-   margin-bottom:2%;
+
+#header p,a{
+    padding-left:1%;
+    padding-right:1%;
 }
-#forme:last-of-type {
-    margin-bottom:2%;
+#header  p a, #footer p a {
+    background-color: red;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
 }
-#lastmsg{
-    float:bottom;
+
+#header  p a:hover, #footer p a:hover {
+    background-color: #555;
+}
+#header  p a:active, #footer p a:active {
+    background-color: black;
 }

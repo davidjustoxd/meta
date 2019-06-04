@@ -8,7 +8,6 @@
     <div class="parts"><p><a href="contacto.php">Contacto</a></p></div>
     <div class="parts"><p><a href="donde.php">Dónde estamos</a></p></div>
     <div class="parts"><p><a href="aboutmeta.php">Sobre Meta</a></p></div>
-    </div>
-</div>
+
 </body>
 </html>

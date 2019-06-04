@@ -6,7 +6,12 @@ require 'data.php';
 ?>
     <html>
     <head>
-        <script> function nuevoChat() {
+        <script>
+            if ( document.getElementById("text").value=='')
+            {
+                setInterval(nuevoChat, 1000);
+            }
+            function nuevoChat() {
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -30,6 +35,7 @@ require 'data.php';
 <?php
 require 'header.php';
 ?>
+<div id="container">
     <div id="allUsuarios">
         Todos los destinatarios <br>
         <?php
@@ -59,9 +65,9 @@ require 'header.php';
                 $fecha = $mensaje['fecha'];
                 $fechaprint = substr($fecha, 11, 5);
                 if ($from == $codUsuario) {
-                    $id = "id='foru'";
+                    $id = "id='foru' style=margin-left:8px; background-color: lightgreen; margin-right:1%'";
                 } else {
-                    $id = "id='forme'";
+                    $id = "id='forme' style=margin-right:8px; background-color: lightgreen; margin-left:1%'";
                 }
                 ?>
                 <li<?php echo " $id" ?>><?php echo $texto ?><br><?php echo $fechaprint; ?></li>

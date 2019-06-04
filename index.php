@@ -1,7 +1,7 @@
 <?php
 $error='';
 if (isset ($_POST['usuario'], $_POST ['pwd'])) {
-	require 'conexion.php';
+	require __DIR__.'/conexion.php';
 	$usuario=$_POST['usuario'];
 	$pwd=$_POST ['pwd'];
 	$usuario=$con->real_escape_string($usuario);
