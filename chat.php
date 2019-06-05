@@ -70,7 +70,7 @@ require 'header.php';
                     $id = "id='forme' style=margin-right:8px; background-color: lightgreen; margin-left:1%'";
                 }
                 ?>
-                <li<?php echo " $id" ?>><?php echo $texto ?><br><?php echo $fechaprint; ?></li>
+                <li<?php echo " $id" ?>><?php echo $texto ?><br><span id='span'><?php echo $fechaprint; ?></span></li>
             <?php } echo "<a id='lastmsg'></a>";
                     echo "</ul>"; ?>
             <div id="textbox">

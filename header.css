@@ -7,8 +7,65 @@ body {
     background-color:#D3D3D3 ;
     overflow:auto;
 }
+#textbox{
+    position:fixed;
+    margin-top:100%;
+}
+#contMensajesChat h1 {
+    height: 90%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* Make Header Sticky */
+#contMensajesChat{
+    position:relative;
+    float:right;
+    width:79.47%;
+    height:100%;
+    border:3px solid green;
+    border-left:none;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+ul {
+    list-style: none;
+
+}
+li{
+    background-color: lightgreen;
+    position:relative;
+    width: 20%;
+    margin:5%;
+    word-wrap:break-word;
+    border-radius: 25px;
+    text-align:center;
+}
+
+#forme{
+    clear:both;
+    float: left;
+}
+#foru{
+    clear:both;
+    float:right;
+}
+
+
+#allUsuarios{
+    float:left;
+    border:3px solid green;
+    height:100%;
+    width:20%;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    position:relative;
+
+
+}
 
 #left{
     float:left;
@@ -50,19 +107,7 @@ margin-left:43%;;
     float: none;
 }
 
-#allUsuarios{
-    /*float:left;*/
-    border:3px solid green;
-    height:100%;
-    width:20%;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 50px;
-    text-align: center;
-    vertical-align: middle;
-    position:relative;
 
-}
 #header_container {
     background:white;
     border:1px solid #666;
@@ -91,7 +136,6 @@ margin-left:43%;;
     left:0;
     position:fixed;
     width:100%;
-    bottom:0;
 }
 
 #footer {
@@ -118,4 +162,8 @@ margin-left:43%;;
 }
 #header  p a:active, #footer p a:active {
     background-color: black;
+}
+#span  {
+font-weight: bold;
+    clear:both;
 }
