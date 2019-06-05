@@ -21,13 +21,13 @@ insertarMensajeChat($texto,$from,$to);}
         $to = $mensaje['codUsuarioTo'];
         $fecha = $mensaje['fecha'];
         $fechaprint = substr($fecha, 11, 5);
-        if ($from == $from) {
-            $id = "id='foru'  style='float:right; margin-left:8px; background-color: lightgreen; margin-right:1%'";
+        if ($from == $codUsuario) {
+            $id = "id='foru'  style=' margin-left:8px; background-color: lightgreen; margin-right:1% float:right; clear:both;'";
         } else {
-            $id = "id='forme'  style='float:left; margin-right:8px; background-color: lightgreen; margin-left:1%'";
+            $id = "id='forme'  style=' margin-right:8px; background-color: lightgreen; margin-left:1% float:left; clear:both;'";
         }
 
-       $response.="<li  $id > $texto <br> $fechaprint </li>";
+       $response.="<li  $id > $texto <br> <span id='span'> $fechaprint </span> </li>";
 
 
  }

@@ -7,9 +7,22 @@ body {
     background-color:#D3D3D3 ;
     overflow:auto;
 }
+#container{
+    width:100%;
+}
 #textbox{
-    position:fixed;
-    margin-top:100%;
+position:fixed;
+    top:84.2%;
+    width:70.6%;
+}
+input[type=text]{
+    position:absolute;
+    width:95%;
+}
+input[type=submit]{
+    position:absolute;
+    width:5%;
+    right:0;
 }
 #contMensajesChat h1 {
     height: 90%;
@@ -37,7 +50,7 @@ li{
     background-color: lightgreen;
     position:relative;
     width: 20%;
-    margin:5%;
+    margin:2%;
     word-wrap:break-word;
     border-radius: 25px;
     text-align:center;
