@@ -1,6 +1,6 @@
 <?php
 
-function datosFichajesAll($exclude=0)
+function datosFichajesAll($exclude = 0)
 {
     global $con;
     $sql = "SELECT u.nombre AS 'nombre',u.apellido1 AS 'apellido', a.accion AS 'accion', f1.fechaAccion AS 'fechaAccion' 
@@ -34,7 +34,7 @@ function getEstadoFichaje($codUsuario)
 }
 
 
-function actualizarEstadoFichaje($codUsuario,$codAccion)
+function actualizarEstadoFichaje($codUsuario, $codAccion)
 {
     global $con;
     $sql = "INSERT INTO fichajes (codUsuario,codAccion)
@@ -65,7 +65,8 @@ function allUsuarios($codUsuario)
     return $filas;
 }
 
-function recuperarMensajesChat($codFrom,$codTo){
+function recuperarMensajesChat($codFrom, $codTo)
+{
     global $con;
     $sql = "SELECT *
             FROM chat
@@ -79,9 +80,40 @@ function recuperarMensajesChat($codFrom,$codTo){
 
 }
 
-function insertarMensajeChat($texto,$from,$to){
+function insertarMensajeChat($texto, $from, $to)
+{
     global $con;
     $sql = "INSERT INTO chat (codUsuarioFrom,texto,codUsuarioTo)
             VALUES($from,'$texto',$to)";
     $filas = $con->query($sql);
 }
+
+function recuperarUltimoChat($codFrom, $codTo)
+{
+    global $con;
+    $sql = "SELECT *
+            FROM chat 
+            WHERE (codUsuarioFrom=$codFrom
+            AND codUsuarioTo=$codTo)
+            OR (codUsuarioFrom=$codTo
+            AND codUsuarioTo=$codFrom)
+            ORDER BY fecha DESC 
+            LIMIT 1";
+    $filas = $con->query($sql);
+    return $filas;
+
+}
+
+function contarChats($codFrom, $codTo)
+    {
+        global $con;
+            $sql = "SELECT COUNT(*) AS 'nMensajes'
+            FROM chat 
+            WHERE (codUsuarioFrom=$codFrom
+            AND codUsuarioTo=$codTo)
+            OR (codUsuarioFrom=$codTo
+            AND codUsuarioTo=$codFrom)";
+        $filas = $con->query($sql);
+        return $filas;
+
+    }
