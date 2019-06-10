@@ -88,7 +88,7 @@ function insertarMensajeChat($texto, $from, $to)
     $filas = $con->query($sql);
 }
 
-function recuperarUltimoChat($codFrom, $codTo)
+function recuperarUltimosChats($codFrom, $codTo, $fecha)
 {
     global $con;
     $sql = "SELECT *
@@ -97,8 +97,8 @@ function recuperarUltimoChat($codFrom, $codTo)
             AND codUsuarioTo=$codTo)
             OR (codUsuarioFrom=$codTo
             AND codUsuarioTo=$codFrom)
-            ORDER BY fecha DESC 
-            LIMIT 1";
+            AND UNIX_TIMESTAMP(fecha) > UNIX_TIMESTAMP($fecha) 
+            ORDER BY fecha DESC";
     $filas = $con->query($sql);
     return $filas;
 

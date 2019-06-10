@@ -1,7 +1,7 @@
 <?php
 
 require 'sesion.php';
-if ((!isset($_GET['nMensajes'])) || (!isset($_GET['from'])) || (!isset($_GET['to']))) {
+if ((!isset($_GET['lastFecha'])) || (!isset($_GET['from'])) || (!isset($_GET['to']))) {
     header('Location:cerrarSesion.php');
     die ("No deberías ver nunca esto");
 }
@@ -10,11 +10,11 @@ require 'functions.php';
 $nMensajes = strip_tags($con->real_escape_string($_GET['nMensajes']));
 $from = strip_tags($con->real_escape_string($_GET['from']));
 $to = strip_tags($con->real_escape_string($_GET['to']));
-$mensajes = contarChats($from, $to);
+$fecha = contarChats($from, $to);
 while ($mensaje = $mensajes->fetch_assoc()) {
     $nMensajesBD = $mensaje['nMensajes'];
     if ($nMensajesBD != $nMensajes) {
-        $mensajes = recuperarUltimoChat($from, $to);
+        $mensajes = recuperarUltimosChats($from, $to, $fecha);
         while ($mensaje = $mensajes->fetch_assoc()) {
             $texto = $mensaje['texto'];
             $from = $mensaje['codUsuarioFrom'];

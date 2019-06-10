@@ -22,12 +22,13 @@ while ($mensaje = $mensajes->fetch_assoc()) {
     $fecha = $mensaje['fecha'];
     $fechaprint = substr($fecha, 11, 5);
     if ($from == $codUsuario) {
-        $id = "id='foru'  style=' margin-left:8px; background-color: lightgreen; margin-right:1% float:right; clear:both;'";
+        $id = "id='foru' style= 'text-align:left; margin-bottom:5%; background-color:lightgreen; border-radius: 25px; padding:10px;'";
     } else {
-        $id = "id='forme'  style=' margin-right:8px; background-color: lightgreen; margin-left:1% float:left; clear:both;'";
+        $id = "id='forme' style='text-align:right; margin-bottom:5%;background-color:white; border-radius: 25px;padding:10px;'";
     }
-
-    $response = "<li  $id > $texto <br> <span id='span'> $fechaprint </span> </li>";
+    $response= "<div class='row' style='margin-right:20%;'>";
+    $response.="<div class='col-md-12' style='word-wrap:break-word;'>";
+    $response.= "<li  $id > $texto <br> <span id='span'> $fechaprint </span> </li></div></div>";
 
 
 }
