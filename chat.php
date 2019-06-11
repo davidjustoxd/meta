@@ -7,33 +7,46 @@ require 'data.php';
     <html>
     <head>
         <script>
+            window.onload = function () {
+                setInterval(function () {
+                    refreshChat();
+                }, 5000);
+            };
+
             function refreshChat() {
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         var newchat = JSON.parse(xmlhttp.responseText);
-                        document.getElementById("ul").innerHTML += newchat['chat'];
+                        if (newchat['chat'] != '') {
+                            var elem = document.getElementById('ul');
+                            elem.scrollTop = elem.scrollHeight;
+                            document.getElementById("ul").innerHTML += newchat['chat'];
+                        }
                     }
                     var from = <?php echo $codUsuario ?>;
                     var to =<?php if (isset($_GET['d'])) {
                         echo $_GET['d'];
                     } else {
                         echo '';
-                    } ?> ;
-                    var lastFecha = document.getElementById("fechaCompleta").lastElementChild.innerHTML;
-                    xmlhttp.open("GET", "refreshChat.php?from=" + from + "&to=" + to + "&l" + lastFecha, true);
+                    } ?>;
+                    var fechaUnix = document.getElementById("fechaUnix").value;
+                    xmlhttp.open("GET", "refreshChat.php?from=" + from + "&to=" + to + "&f" + fechaUnix, true);
                     xmlhttp.send();
                 }
-                set setTimeout(refreshChat, 1000);
             }
+
             function insertReload() {
 
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("text").value = '';
                         var insertchat = JSON.parse(xmlhttp.responseText);
                         document.getElementById("ul").innerHTML += insertchat['chat'];
-                        document.getElementById("text").value = '';
+                        document.getElementById("fechaUnix").value = insertchat['fechaUnix'];
+                        var elem = document.getElementById('ul');
+                        elem.scrollTop = elem.scrollHeight;
                     }
                 }
                 var texto = document.getElementById("text").value;
@@ -42,12 +55,12 @@ require 'data.php';
                     echo $_GET['d'];
                 } else {
                     echo '';
-                } ?>
+                } ?> ;
+                var fechaUnix = document.getElementById("fechaUnix").value;
 
-                    xmlhttp.open("GET", "insertreload.php?texto=" + texto + "&from=" + from + "&to=" + to, true);
+                xmlhttp.open("GET", "insertreload.php?texto=" + texto + "&from=" + from + "&to=" + to + "&f=" + fechaUnix, true);
                 xmlhttp.send();
             }
-            window.onLoad=refreshChat();
         </script>
         <title>
             Chat META
@@ -64,8 +77,8 @@ require 'header.php';
             <?php
             $destinatarios = allUsuarios($codUsuario);
             while ($destinatario = $destinatarios->fetch_assoc()) { ?>
-                <a href="chat.php?d=<?php echo $destinatario['codigo'] ?>#lastmsg" ;><?php
-                    if ((isset($_GET['d'])) && ($destinatario['codigo'] == $_GET['d'])) {
+                <a href="chat.php?d=<?php echo $destinatario['codigo'];?> "><?php
+                    if ((isset($_GET['d']))  && ($destinatario['codigo'] == $_GET['d'])) {
                         echo "<strong>" . $destinatario['nombre'] . ' ' . $destinatario['apellido1'] . "</strong>";
                     } else {
                         echo $destinatario['nombre'] . ' ' . $destinatario['apellido1'];
@@ -75,24 +88,24 @@ require 'header.php';
             <?php } ?>
         </div>
         <div class="col-md-8">
-            <?php if (!isset($_GET['d'])) {
+            <?php if ((!isset($_GET['d'])) ||  (!is_numeric($_GET['d']))){
                 echo "<h1>Selecciona un destinatario para empezar a chatear</h1>";
             } else {
             $destinatario = $_GET['d'];
-            $nMensajes = 0;
-            $mensajes = recuperarMensajesChat($codUsuario, $destinatario);
             echo "<ul id='ul' style='list-style: none; height:700px; overflow:auto;' >";
+            $mensajes = recuperarMensajesChat($codUsuario, $destinatario);
+            $fechaUnix='';
             while ($mensaje = $mensajes->fetch_assoc()) {
-                $nMensajes += 1;
                 $texto = $mensaje['texto'];
-                $from = $mensaje['codUsuarioFrom'];
+                $from = $mensaje['remitente'];
                 $to = $mensaje['codUsuarioTo'];
                 $fecha = $mensaje['fecha'];
                 $fechaprint = substr($fecha, 11, 5);
+                $fechaUnix = $mensaje['fechaUnix'];
                 if ($from == $codUsuario) {
-                    $id = "id='foru' style= 'text-align:left; margin-bottom:5%; background-color:lightgreen; border-radius: 25px; padding:10px;'";
+                    $id = "id='foru' style= 'text-align:right; margin-bottom:5%; background-color:lightgreen; border-radius: 25px; padding:10px;'";
                 } else {
-                    $id = "id='forme' style='text-align:right; margin-bottom:5%;background-color:white; border-radius: 25px;padding:10px;'";
+                    $id = "id='forme' style='text-align:left; margin-bottom:5%;background-color:white; border-radius: 25px;padding:10px;'";
                 }
                 ?>
                 <div class="row" style="margin-right:20%;">
@@ -102,11 +115,10 @@ require 'header.php';
                     </div>
                 </div>
             <?php }
-            //            echo "<a id='lastmsg'></a>";
             echo "</ul>"; ?>
 
             <div id="textbox">
-                <input type="hidden" id='fechaCompleta' value="<?php echo $fecha ?>">
+                <input type="hidden" id='fechaUnix' value="<?php echo $fechaUnix ?>">
                 <form name="msg" onsubmit="return false">
                     <input type="text" id="text" name="text" style="width:80%;">
                     <input type="submit" value="Enviar" onclick="insertReload();">

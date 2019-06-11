@@ -1,39 +1,39 @@
 <?php
-
+//https://www.youtube.com/watch?v=wMlLgYyz_ws
+//https://www.youtube.com/watch?v=oIVI1qYx87E
 require 'sesion.php';
-if ((!isset($_GET['lastFecha'])) || (!isset($_GET['from'])) || (!isset($_GET['to']))) {
+if ((!isset($_GET['f'])) || (!isset($_GET['to']))) {
     header('Location:cerrarSesion.php');
     die ("No deberías ver nunca esto");
 }
 require 'conexion.php';
 require 'functions.php';
-$nMensajes = strip_tags($con->real_escape_string($_GET['nMensajes']));
-$from = strip_tags($con->real_escape_string($_GET['from']));
+$fecha = strip_tags($con->real_escape_string($_GET['f']));
 $to = strip_tags($con->real_escape_string($_GET['to']));
-$fecha = contarChats($from, $to);
+$mensajes = recuperarUltimosChats($codUsuario, $to, $fecha);
+$response='';
+$nuevos=0;
 while ($mensaje = $mensajes->fetch_assoc()) {
-    $nMensajesBD = $mensaje['nMensajes'];
-    if ($nMensajesBD != $nMensajes) {
-        $mensajes = recuperarUltimosChats($from, $to, $fecha);
-        while ($mensaje = $mensajes->fetch_assoc()) {
-            $texto = $mensaje['texto'];
-            $from = $mensaje['codUsuarioFrom'];
-            $to = $mensaje['codUsuarioTo'];
-            $fecha = $mensaje['fecha'];
-            $fechaprint = substr($fecha, 11, 5);
-            if ($from == $codUsuario) {
-                $id = "id='foru'  style=' margin-left:8px; background-color: lightgreen; margin-right:1% float:right; clear:both;'";
-            } else {
-                $id = "id='forme'  style=' margin-right:8px; background-color: lightgreen; margin-left:1% float:left; clear:both;'";
-            }
-
-            $response = "<li  $id > $texto <br> <span id='span'> $fechaprint </span> </li>";
-
-
-        }
+    $nuevos=1;
+    $texto = $mensaje['texto'];
+    $from = $mensaje['remitente'];
+    $to = $mensaje['codUsuarioTo'];
+    $fecha = $mensaje['fecha'];
+    $fechaprint = substr($fecha, 11, 5);
+    $fechaUnix= $mensaje['fechaUnix'];
+    if ($from == $codUsuario) {
+        $id = "id='foru' style= 'text-align:right; margin-bottom:5%; background-color:lightgreen; border-radius: 25px; padding:10px;'";
+    } else {
+        $id = "id='forme' style='text-align:left; margin-bottom:5%;background-color:white; border-radius: 25px;padding:10px;'";
     }
-    else $response='';
+    $response .= "<div class='row' style='margin-right:20%;'>";
+    $response .= "<div class='col-md-12' style='word-wrap:break-word;'>";
+    $response .= "<li  $id > $texto <br> <span id='span'> $fechaprint </span> </li></div></div>";
 }
+$json['fechaUnix']=$fechaUnix;
 //$response .= "<a id='lastmsg'></a>";
-        $json['chat'] = $response;
-        echo json_encode($json);
+if ($nuevos) {
+    $json['chat'] = $response;
+}
+else $json['chat']= '';
+echo json_encode($json);

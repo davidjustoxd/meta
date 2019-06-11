@@ -68,7 +68,7 @@ function allUsuarios($codUsuario)
 function recuperarMensajesChat($codFrom, $codTo)
 {
     global $con;
-    $sql = "SELECT *
+    $sql = "SELECT CodUsuarioFrom AS 'remitente', texto, codUsuarioTo, fecha, UNIX_TIMESTAMP(fecha) AS 'fechaUnix'
             FROM chat
             WHERE (codUsuarioFrom=$codFrom
             AND codUsuarioTo=$codTo)
@@ -91,14 +91,14 @@ function insertarMensajeChat($texto, $from, $to)
 function recuperarUltimosChats($codFrom, $codTo, $fecha)
 {
     global $con;
-    $sql = "SELECT *
+    $sql = "SELECT CodUsuarioFrom AS 'remitente', texto, codUsuarioTo, fecha, UNIX_TIMESTAMP(fecha) AS 'fechaUnix'
             FROM chat 
-            WHERE (codUsuarioFrom=$codFrom
+            WHERE ((codUsuarioFrom=$codFrom
             AND codUsuarioTo=$codTo)
             OR (codUsuarioFrom=$codTo
-            AND codUsuarioTo=$codFrom)
-            AND UNIX_TIMESTAMP(fecha) > UNIX_TIMESTAMP($fecha) 
-            ORDER BY fecha DESC";
+            AND codUsuarioTo=$codFrom))
+            AND UNIX_TIMESTAMP(fecha) > $fecha 
+            ORDER BY fecha ASC";
     $filas = $con->query($sql);
     return $filas;
 
