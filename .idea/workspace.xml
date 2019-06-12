@@ -6,12 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2df10ac6-728e-4deb-8bd9-1801053aa3c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/chat.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insertreload.php" beforeDir="false" afterPath="$PROJECT_DIR$/insertreload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/refreshChat.php" beforeDir="false" afterPath="$PROJECT_DIR$/refreshChat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/menu.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="90" column="73" selection-start-line="90" selection-start-column="73" selection-end-line="90" selection-end-column="73" />
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
               </folding>
@@ -99,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+            <state relative-caret-position="357">
+              <caret line="124" column="39" lean-forward="true" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -125,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/menu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="147" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="147" />
+            <state relative-caret-position="-17">
+              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
               <folding>
                 <element signature="e#269#373#0#HTML" expanded="true" />
               </folding>
@@ -187,13 +184,13 @@
         <option value="$PROJECT_DIR$/pp.php" />
         <option value="$PROJECT_DIR$/fichajes.php" />
         <option value="$PROJECT_DIR$/data.php" />
-        <option value="$PROJECT_DIR$/menu.php" />
         <option value="$PROJECT_DIR$/sesion.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4ea6bd47-9ec5-4827-88d4-92bfeec27db4/console.sql" />
-        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/insertreload.php" />
         <option value="$PROJECT_DIR$/refreshChat.php" />
+        <option value="$PROJECT_DIR$/menu.php" />
         <option value="$PROJECT_DIR$/chat.php" />
+        <option value="$PROJECT_DIR$/functions.php" />
       </list>
     </option>
   </component>
@@ -257,7 +254,7 @@
       <workItem from="1558940959844" duration="19706000" />
       <workItem from="1558979564280" duration="4463000" />
       <workItem from="1559044838582" duration="49621000" />
-      <workItem from="1559737839603" duration="56285000" />
+      <workItem from="1559737839603" duration="61451000" />
     </task>
     <task id="LOCAL-00001" summary="Implementados principios de chat, listaje de fichaje total y opciones de entrar pausa y salir. Falta ajustar css de imagenes de acciones de fichar, implementar el envío de mensajes con jS y AJAX y permitir que los privilegiados puedan hacer management de usuarios">
       <created>1559063433183</created>
@@ -329,11 +326,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560185536150</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Progresa ajax. Debe haber algo mal en el js de refresh, ya que no funciona el timeout ni se reflenan las llamadas en DevTools">
+      <created>1560269133259</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1560269133261</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130075000" />
+    <option name="totallyTimeSpent" value="135241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -395,7 +399,8 @@
     <MESSAGE value="Faltaban por cerrar 2 div's en footer.php" />
     <MESSAGE value="Solucionados los lados del chat. Falta ahora buscar un js para que haga auto scroll abajo" />
     <MESSAGE value="Hechas menu, pp y fichajes con mdbootstrap grids." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hechas menu, pp y fichajes con mdbootstrap grids." />
+    <MESSAGE value="Progresa ajax. Debe haber algo mal en el js de refresh, ya que no funciona el timeout ni se reflenan las llamadas en DevTools" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progresa ajax. Debe haber algo mal en el js de refresh, ya que no funciona el timeout ni se reflenan las llamadas en DevTools" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/registrar.php">
@@ -531,13 +536,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4ea6bd47-9ec5-4827-88d4-92bfeec27db4/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/insertreload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -562,8 +560,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="90" column="73" selection-start-line="90" selection-start-column="73" selection-end-line="90" selection-end-column="73" />
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
           </folding>
@@ -572,11 +570,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="147" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="147" />
+        <state relative-caret-position="-17">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
           <folding>
             <element signature="e#269#373#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="124" column="39" lean-forward="true" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
         </state>
       </provider>
     </entry>

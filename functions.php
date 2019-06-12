@@ -117,3 +117,30 @@ function contarChats($codFrom, $codTo)
         return $filas;
 
     }
+
+function gestionHoraria($codUsuario)
+{
+    global $con;
+    $numeroDiaSemana = date("N",time());
+    $numeroSemanaAño= date("W",time());
+    $sql="SELECT "
+
+
+
+
+
+
+
+
+
+    global $con;
+    $sql = "SELECT COUNT(*) AS 'nMensajes'
+            FROM chat 
+            WHERE (codUsuarioFrom=$codFrom
+            AND codUsuarioTo=$codTo)
+            OR (codUsuarioFrom=$codTo
+            AND codUsuarioTo=$codFrom)";
+    $filas = $con->query($sql);
+    return $filas;
+
+}
