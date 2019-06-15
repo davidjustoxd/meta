@@ -105,42 +105,154 @@ function recuperarUltimosChats($codFrom, $codTo, $fecha)
 }
 
 function contarChats($codFrom, $codTo)
-    {
-        global $con;
-            $sql = "SELECT COUNT(*) AS 'nMensajes'
+{
+    global $con;
+    $sql = "SELECT COUNT(*) AS 'nMensajes'
             FROM chat 
             WHERE (codUsuarioFrom=$codFrom
             AND codUsuarioTo=$codTo)
             OR (codUsuarioFrom=$codTo
             AND codUsuarioTo=$codFrom)";
-        $filas = $con->query($sql);
-        return $filas;
+    $filas = $con->query($sql);
+    return $filas;
 
+}
+
+
+function sumaTiempoSemana($usuario)
+{
+    global $con;
+    $sql = "SET @email_list = 0;";
+    $tiempo = $con->query($sql);
+    $sql = "CALL lista_entradas_semana(@email_list, $usuario);";
+    $tiempo = $con->query($sql);
+    $sql = "SELECT @email_list AS 'tiempo_unix'";
+    $tiempo = $con->query($sql);
+    while ($a = $tiempo->fetch_assoc()) {
+        $tiempo1 = $a['tiempo_unix'];
     }
 
-//function gestionHoraria($codUsuario)
-//{
-//    global $con;
-//    $numeroDiaSemana = date("N",time());
-//    $numeroSemanaAño= date("W",time());
-//    $sql="SELECT "
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//    global $con;
-//    $sql = "SELECT COUNT(*) AS 'nMensajes'
-//            FROM chat
-//            WHERE (codUsuarioFrom=$codFrom
-//            AND codUsuarioTo=$codTo)
-//            OR (codUsuarioFrom=$codTo
-//            AND codUsuarioTo=$codFrom)";
-//    $filas = $con->query($sql);
-//    return $filas;
-//
-//}
+
+    // SABER SI EL TRABAJADOR ESTÁ DENTRO
+    $sql = "SELECT MAX(unix_timestamp(fechaAccion)) as 'last'
+ FROM fichajes 
+ WHERE codUsuario=$usuario
+ AND codAccion !=1 
+ AND fechaAccion > 
+	(SELECT MAX(fechaAccion) 
+	FROM fichajes 
+	WHERE codUsuario=$usuario 
+	AND codAccion=1)";
+    $tiempoHastaNow = $con->query($sql);
+    while ($ultimo = $tiempoHastaNow->fetch_assoc()) {
+        // TESTEAR CON is_null
+        if ($ultimo['last'] == null) {
+            $estaDentro = 1;
+        } else {
+            $estaDentro = 0;
+        }
+    }
+
+// SI NO ESTÁ DENTRO, SABER LA FECHA DE ULTIMO LOGIN
+    $tiempoUltimoLogin = 0;
+    if ($estaDentro == 1) {
+        $sql = "SELECT MAX(unix_timestamp(fechaAccion)) as 'ultimoLogin'
+ FROM fichajes 
+ WHERE codUsuario=$usuario
+ AND codAccion =1";
+        $ultimoLogin = $con->query($sql);
+        while ($ultimo = $ultimoLogin->fetch_assoc()) {
+            $tiempoUltimoLogin = $ultimo['ultimoLogin'];
+        }
+    }
+
+    $cut = time();
+    if ($estaDentro == 1) {
+        $tiempo2 = $cut - $tiempoUltimoLogin;
+    } else {
+        $tiempo2 = 0;
+    }
+    $tiempoTotal = $tiempo1 + $tiempo2;
+    $horas = gmdate("H", $tiempoTotal);
+    $minutos = gmdate("i", $tiempoTotal);
+    $tiempoTotal = "Tiempo trabajado esta semana: <strong>" . $horas . "</strong>h" . " <strong>" . $minutos . "</strong>m" . " ";
+    return $tiempoTotal;
+}
+
+function sumaTiempoDia($usuario){
+    global $con;
+    $sql="SET @email_list = 0;";
+    $tiempo=$con->query($sql);
+    $sql="CALL lista_entradas_dia(@email_list, $usuario);";
+    $tiempo=$con->query($sql);
+    $sql="SELECT @email_list AS 'tiempo_unix'";
+    $tiempo=$con->query($sql);
+    while ($a=$tiempo->fetch_assoc()){
+        $tiempo1=$a['tiempo_unix'];
+    }
+
+
+    // SABER SI EL TRABAJADOR ESTÁ DENTRO
+    $sql="SELECT MAX(unix_timestamp(fechaAccion)) as 'last'
+ FROM fichajes 
+ WHERE codUsuario=$usuario
+ AND codAccion !=1 
+ AND fechaAccion > 
+	(SELECT MAX(fechaAccion) 
+	FROM fichajes 
+	WHERE codUsuario=$usuario 
+	AND codAccion=1)";
+    $tiempoHastaNow=$con->query($sql);
+    while ($ultimo=$tiempoHastaNow->fetch_assoc()){
+        // TESTEAR CON is_null
+        if ($ultimo['last']==null){
+            $estaDentro=1;
+        }
+        else{
+            $estaDentro=0;
+        }
+    }
+
+// SI ESTÁ DENTRO, SABER LA FECHA DE ULTIMO LOGIN
+    $tiempoUltimoLogin=0;
+    if ($estaDentro==1){
+        $sql="SELECT MAX(unix_timestamp(fechaAccion)) as 'ultimoLogin'
+ FROM fichajes 
+ WHERE codUsuario=$usuario
+ AND codAccion =1";
+        $ultimoLogin=$con->query($sql);
+        while ($ultimo=$ultimoLogin->fetch_assoc()){
+            $tiempoUltimoLogin=$ultimo['ultimoLogin'];
+        }
+    }
+
+    $cut=time();
+    if ($estaDentro==1 ){
+        $tiempo2=$cut - $tiempoUltimoLogin ; }
+    else {
+        $tiempo2=0 ;
+    }
+    $tiempoTotal=$tiempo1 + $tiempo2;
+    $horas=gmdate("H", $tiempoTotal);
+    $minutos=gmdate("i",$tiempoTotal);
+    $tiempoTotal= "Tiempo trabajado hoy: <strong>". $horas ."</strong>h". " <strong>". $minutos . "</strong>m" ." ";
+    return $tiempoTotal;
+}
+function CalcularTiempoRestanteSemana($usuario){
+    $horasTotal=40;
+    $str = sumaTiempoSemana($usuario);
+    $str = preg_replace('/\D/', '', $str);
+    $horas=substr($str, 0, 2);
+    $minutos=substr($str,3,2);
+    $segundosHoras=$horas * 60 * 60;
+    $segundosMinutos=$minutos * 60 ;
+    $segundosTrabajados=$segundosHoras + $segundosMinutos;
+    $segundosTotales=$horasTotal*60*60;
+    $segundosRestantes=$segundosTotales - $segundosTrabajados;
+    $horas=gmdate("H", $segundosRestantes);
+    $minutos=gmdate("i",$segundosRestantes);
+    $tiempoRestante="Esta semana te quedan: <strong>" . $horas ."</strong> h". " <strong>". $minutos . "</strong>m";
+    return $tiempoRestante;
+
+
+}

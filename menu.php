@@ -51,18 +51,33 @@ require 'header.php';
                             $estadofichaje = $fila['codAccion'];
                             switch ($estadofichaje) {
                                 case 1:
-                                    echo " Trabajando</h1>
-                                     </div><div class='col-md-6''>";
+                                    echo " Trabajando</h1>";
+                                    echo sumaTiempoSemana($codUsuario);
+                                    echo "<br>";
+                                    echo sumaTiempoDia($codUsuario);
+                                    echo "<br>";
+                                    echo CalcularTiempoRestanteSemana($codUsuario);
+                                    echo "</div><div class='col-md-6''>";
                                     echo $e1;
                                     break;
                                 case 2:
-                                    echo " En el descanso</h1> 
-                                    </div><div class='col-md-6''>";
+                                    echo " En el descanso</h1>";
+                                    echo sumaTiempoSemana($codUsuario);
+                                    echo "<br>";
+                                    echo sumaTiempoDia($codUsuario);
+                                    echo "<br>";
+                                    echo CalcularTiempoRestanteSemana($codUsuario);
+                                    echo "</div><div class='col-md-6''>";
                                     echo $e2;
                                     break;
                                 case 3:
-                                    echo " Fuera</h1>
-                                    </div><div class='col-md-6''>";
+                                    echo " Fuera</h1>";
+                                    echo sumaTiempoSemana($codUsuario);
+                                    echo "<br>";
+                                    echo sumaTiempoDia($codUsuario);
+                                    echo "<br>";
+                                    echo CalcularTiempoRestanteSemana($codUsuario);
+                                    echo "</div><div class='col-md-6''>";
                                     echo $e3;
                                     break;
                             }

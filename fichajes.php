@@ -15,7 +15,7 @@ require 'data.php';
 require 'header.php';
 ?>
     <div  style="background-color: lightgrey; padding-top: 5%; padding-bottom: 70px;">
-        <div class="container">
+        <div class="container" style="height:100% !important; overflow:auto;">
             <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-3" style="text-align:center; font-weight: bold;">Fecha</div>
