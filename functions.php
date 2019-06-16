@@ -243,14 +243,14 @@ function CalcularTiempoRestanteSemana($usuario){
     $str = sumaTiempoSemana($usuario);
     $str = preg_replace('/\D/', '', $str);
     $horas=substr($str, 0, 2);
-    $minutos=substr($str,3,2);
+    $minutos=substr($str,2,2);
     $segundosHoras=$horas * 60 * 60;
     $segundosMinutos=$minutos * 60 ;
     $segundosTrabajados=$segundosHoras + $segundosMinutos;
-    $segundosTotales=$horasTotal*60*60;
-    $segundosRestantes=$segundosTotales - $segundosTrabajados;
-    $horas=gmdate("H", $segundosRestantes);
-    $minutos=gmdate("i",$segundosRestantes);
+    $segundosTotales=$horasTotal * 60 * 60;
+    $segundosRestantes= $segundosTotales - $segundosTrabajados;
+    $horas = floor($segundosRestantes / 3600);
+    $minutos = floor(($segundosRestantes / 60) % 60);
     $tiempoRestante="Esta semana te quedan: <strong>" . $horas ."</strong> h". " <strong>". $minutos . "</strong>m";
     return $tiempoRestante;
 
