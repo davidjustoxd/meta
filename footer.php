@@ -6,13 +6,13 @@
   width: 100%; /* Full width */
   min-height:7%;
   text-transform: uppercase;">
-<a href="pp.php">política de privacidad</a>
-    <a href="about.php">Quiénes somos</a>
-    <a href="what.php">Qué hacemos</a>
+    <a href="pp.php">política de privacidad</a>
     <a href="contacto.php">Contacto</a>
-    <a href="donde.php">Dónde estamos</a>
     <a href="aboutmeta.php">Sobre Meta</a>
-    </div>
+    <?php if ($esAdmin == 1) {
+        echo "<a href='management.php'>Administrar usuarios </a>";
+    } ?>
+</div>
 </div>
 </body>
 </html>

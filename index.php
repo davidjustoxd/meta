@@ -17,7 +17,6 @@ if (isset ($_POST['usuario'], $_POST ['pwd'])) {
         $_SESSION['nombre'] = $fila['nombre'];
         $_SESSION['apellido1'] = $fila['apellido1'];
         $_SESSION['codPermiso'] = $fila['codPermiso'];
-//		$_SESSION['img']=$fila['img'];
         header('Location:menu.php');
     } else $error = "No existe la combinación introducida";
 }

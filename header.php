@@ -8,7 +8,7 @@
   width: 100%; /* Full width */
   min-height:7%;
   text-transform: uppercase;">
-    <a href="perfil.php?id=<?php echo $codUsuario ; ?>"><?php echo "$nombreUsuario $apellido1Usuario" ; ?></a>
+    <a href="perfil.php"><?php echo "$nombreUsuario $apellido1Usuario" ; ?></a>
     <a href="menu.php">Inicio</a>
     <a href="chat.php">chat</a>
     <a href="fichajes.php"> tus Fichajes</a>

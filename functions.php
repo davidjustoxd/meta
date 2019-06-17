@@ -256,3 +256,21 @@ function CalcularTiempoRestanteSemana($usuario){
 
 
 }
+
+function updatePasswd($codUsuario, $oldPwd, $newPwd ){
+    global $con;
+    $sql = "UPDATE usuarios
+    SET pwd = '$newPwd'
+    WHERE codigo= $codUsuario 
+    AND pwd = '$oldPwd'";
+    $con->query($sql);
+}
+
+function updateUserName($usuario, $codUsuario, $pwd ){
+    global $con;
+    $sql = "UPDATE usuarios
+    SET nombreUsuario = '$usuario'
+    WHERE codigo= $codUsuario 
+    AND pwd = '$pwd' ";
+    $con->query($sql);
+}
