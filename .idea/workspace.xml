@@ -6,16 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2df10ac6-728e-4deb-8bd9-1801053aa3c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/management.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/updateUsuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/perfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sesion.php" beforeDir="false" afterPath="$PROJECT_DIR$/sesion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/upload.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,31 +36,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upload.php">
+        <entry file="file://$PROJECT_DIR$/perfil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="762">
+              <caret line="66" column="58" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/conexion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="36" />
+            <state relative-caret-position="17">
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/perfil.php">
+        <entry file="file://$PROJECT_DIR$/conexion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="66" column="58" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
-              <folding>
-                <element signature="e#299#417#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -77,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
+            <state relative-caret-position="4488">
               <caret line="264" column="15" selection-start-line="264" selection-start-column="15" selection-end-line="264" selection-end-column="15" />
             </state>
           </provider>
@@ -95,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/registrar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="561">
               <caret line="33" column="215" selection-start-line="33" selection-start-column="215" selection-end-line="33" selection-end-column="215" />
             </state>
           </provider>
@@ -120,9 +108,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" column="30" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="30" />
-              <folding>
-                <element signature="e#263#381#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -132,9 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
               <caret line="26" column="67" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="67" />
-              <folding>
-                <element signature="e#241#359#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -170,7 +152,6 @@
       <list>
         <option value="$PROJECT_DIR$/registrar.php" />
         <option value="$PROJECT_DIR$/cerrarSesion.php" />
-        <option value="$PROJECT_DIR$/conexion.php" />
         <option value="$PROJECT_DIR$/cestado.php" />
         <option value="$PROJECT_DIR$/img/insertreload.php" />
         <option value="$PROJECT_DIR$/header.css" />
@@ -192,20 +173,23 @@
         <option value="$PROJECT_DIR$/updateUsuario.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/perfil.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/conexion.php" />
+        <option value="$PROJECT_DIR$/conexion.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1938" />
-    <option name="height" value="1058" />
+    <option name="width" value="1940" />
+    <option name="height" value="1060" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,7 +201,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,7 +240,8 @@
       <workItem from="1559044838582" duration="49621000" />
       <workItem from="1559737839603" duration="66456000" />
       <workItem from="1560591894188" duration="5069000" />
-      <workItem from="1560682236415" duration="15208000" />
+      <workItem from="1560682236415" duration="15963000" />
+      <workItem from="1560764053145" duration="604000" />
     </task>
     <task id="LOCAL-00001" summary="Implementados principios de chat, listaje de fichaje total y opciones de entrar pausa y salir. Falta ajustar css de imagenes de acciones de fichar, implementar el envío de mensajes con jS y AJAX y permitir que los privilegiados puedan hacer management de usuarios">
       <created>1559063433183</created>
@@ -357,17 +341,24 @@
       <option name="project" value="LOCAL" />
       <updated>1560709616196</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Implementados cambio de nombre de usuario y contraseña. &#10;TODO&#10;-Modificar función de cálculo de horas para que si la fecha es domingo cambie la semana.&#10;-Implementar usuarios privilegiados: SELECT con usuarios para eliminar, insertar usuario (nombre de usuario, privilegio(?), &quot;la contraseña por defecto es abc123.&quot;&#10;-Arreglar pitoChat">
+      <created>1560735837493</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1560735837493</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160523000" />
+    <option name="totallyTimeSpent" value="161882000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07992008" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08041958" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -406,7 +397,8 @@
     <MESSAGE value="whatever" />
     <MESSAGE value="Implementando gestión horaria..." />
     <MESSAGE value="Gestión horaria funcionando a parte del problema de los domingos, Implementada también página perfil donde poder subir foto. Pendiente inserción de usuarios y fixear chat." />
-    <option name="LAST_COMMIT_MESSAGE" value="Gestión horaria funcionando a parte del problema de los domingos, Implementada también página perfil donde poder subir foto. Pendiente inserción de usuarios y fixear chat." />
+    <MESSAGE value="Implementados cambio de nombre de usuario y contraseña. &#10;TODO&#10;-Modificar función de cálculo de horas para que si la fecha es domingo cambie la semana.&#10;-Implementar usuarios privilegiados: SELECT con usuarios para eliminar, insertar usuario (nombre de usuario, privilegio(?), &quot;la contraseña por defecto es abc123.&quot;&#10;-Arreglar pitoChat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementados cambio de nombre de usuario y contraseña. &#10;TODO&#10;-Modificar función de cálculo de horas para que si la fecha es domingo cambie la semana.&#10;-Implementar usuarios privilegiados: SELECT con usuarios para eliminar, insertar usuario (nombre de usuario, privilegio(?), &quot;la contraseña por defecto es abc123.&quot;&#10;-Arreglar pitoChat" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/insertar.php">
@@ -426,13 +418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -531,16 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="30" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#263#381#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -548,9 +523,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4488">
+          <caret line="264" column="15" selection-start-line="264" selection-start-column="15" selection-end-line="264" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updateUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/registrar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="561">
           <caret line="33" column="215" selection-start-line="33" selection-start-column="215" selection-end-line="33" selection-end-column="215" />
         </state>
       </provider>
@@ -565,10 +561,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="289">
+          <caret line="17" column="30" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -576,23 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="67" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="67" />
-          <folding>
-            <element signature="e#241#359#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="264" column="15" selection-start-line="264" selection-start-column="15" selection-end-line="264" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/updateUsuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -600,9 +579,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="762">
           <caret line="66" column="58" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
-          <folding>
-            <element signature="e#299#417#0#HTML" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/conexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
         </state>
       </provider>
     </entry>

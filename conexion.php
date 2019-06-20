@@ -1,5 +1,5 @@
 <?php
-$servidorBD = '35.238.246.35';
+$servidorBD = 'localhost';
 $usuarioBD = 'meta';
 $paswordBD = 'abc123.';
 $bd = 'meta';
