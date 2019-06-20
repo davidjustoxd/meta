@@ -65,7 +65,31 @@ require 'data.php';
         <title>
             Chat META
         </title>
+        <style>
+            /* width */
+            ::-webkit-scrollbar {
+                width: 20px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey;
+                border-radius: 10px;
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #0000EE;
+                border-radius: 10px;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: black;
+            }
+        </style>
     </head>
+
 <?php
 require 'header.php';
 ?>
@@ -73,12 +97,13 @@ require 'header.php';
      style="background-color: lightgrey; padding-top: 70px; padding-bottom: 70px; height: 100%; max-width:100%; overflow:auto;">
     <div class="row">
         <div class="col-md-4" style="text-align:center;">
+            <br><br><br><br><br><br><br><br><br><br><br>
             Todos los destinatarios <br>
             <?php
             $destinatarios = allUsuarios($codUsuario);
             while ($destinatario = $destinatarios->fetch_assoc()) { ?>
-                <a href="chat.php?d=<?php echo $destinatario['codigo'];?> "><?php
-                    if ((isset($_GET['d']))  && ($destinatario['codigo'] == $_GET['d'])) {
+                <a href="chat.php?d=<?php echo $destinatario['codigo']; ?> "><?php
+                    if ((isset($_GET['d'])) && ($destinatario['codigo'] == $_GET['d'])) {
                         echo "<strong>" . $destinatario['nombre'] . ' ' . $destinatario['apellido1'] . "</strong>";
                     } else {
                         echo $destinatario['nombre'] . ' ' . $destinatario['apellido1'];
@@ -87,14 +112,14 @@ require 'header.php';
                 <br>
             <?php } ?>
         </div>
-        <div class="col-md-8">
-            <?php if ((!isset($_GET['d'])) ||  (!is_numeric($_GET['d']))){
+        <div class="col-md-8" style="max-height=10%;">
+            <?php if ((!isset($_GET['d'])) || (!is_numeric($_GET['d']))){
                 echo "<h1>Selecciona un destinatario para empezar a chatear</h1>";
             } else {
             $destinatario = $_GET['d'];
-            echo "<ul id='ul' style='list-style: none; height:700px; overflow:auto;' >";
+            echo "<ul id='ul' style='list-style: none; height:700px; width: 90%; overflow:auto;' >";
             $mensajes = recuperarMensajesChat($codUsuario, $destinatario);
-            $fechaUnix='';
+            $fechaUnix = '';
             while ($mensaje = $mensajes->fetch_assoc()) {
                 $texto = $mensaje['texto'];
                 $from = $mensaje['remitente'];
@@ -109,7 +134,7 @@ require 'header.php';
                 }
                 ?>
                 <div class="row" style="margin-right:20%;">
-                    <div class="col-md-12" style='word-wrap:break-word;'>
+                    <div class="col-md-12 overflow_auto" style='word-wrap:break-word;'>
                         <li<?php echo " $id " ?>><?php echo $texto ?><br><span
                                     id='span'><?php echo $fechaprint; ?></span></li>
                     </div>

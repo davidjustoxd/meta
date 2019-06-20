@@ -1,7 +1,8 @@
 <link href="../bmd/css/bootstrap.css" type="text/css" rel="stylesheet">
 <body>
 <div class="navbar" style="overflow: hidden;
-  background-color: #333;
+  background-color: #333 ;
+  z-index:2;
   justify-content: space-around;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
@@ -11,7 +12,7 @@
     <a href="perfil.php"><?php echo "$nombreUsuario $apellido1Usuario" ; ?></a>
     <a href="menu.php">Inicio</a>
     <a href="chat.php">chat</a>
-    <a href="fichajes.php"> tus Fichajes</a>
+    <a href="fichajesoriginal.php"> tus Fichajes</a>
     <a href="cerrarSesion.php">Cerrar sesión</a>
 </div>
-
+<!-- GRAFICOS: https://jpgraph.net/ -->
