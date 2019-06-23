@@ -29,14 +29,14 @@ if (isset ($_POST['usuario'], $_POST ['pwd'])) {
     <title> Login </title>
 </head>
 <body>
-<div class="border border-primary m-5 p-5">
-    <form action="index.php" METHOD="POST" class="form">
-        Nombre de usuario<input type="text" name="usuario" class="form-control"/>
-        Contraseña<input type="password" name="pwd" class="form-control"/>
-        </br>
-        <input type="submit" value="Entrar" class="form-control"/>
-    </form>
-    <p1> <?= $error ?> </p1>
-    <a href="registrar.php"> Registrate </a>
+<div style="height:100%; width:20%; margin:0;"></div>
+    <div style="border-left:1px solid blue; height:100% !important;">
+        <form action="index.php" METHOD="POST" class="form"><br><br><br><br><br><br><br><br>
+            Nombre de usuario<br><input type="text" name="usuario" class="form-control"/><br>
+            Contraseña<br><input type="password" name="pwd" class="form-control"/>
+            </br><br>
+            <input type="submit" value="Entrar" class="form-control"/>
+        </form>
+    </div>
 </body>
 </html>

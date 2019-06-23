@@ -95,6 +95,11 @@ require 'header.php';
             </div>
         </div>
     </div>
+    <h3>Panel de notificaciones:</h3>
+    <ul>
+        <li><a href="">1 ajuste horario pendiente</a></li>
+        <li><a href="">3 solicitudes de vacaciones pendientes</a></li>
+    </ul>
 </div>
 <?php
 

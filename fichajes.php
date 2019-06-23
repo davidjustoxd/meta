@@ -34,68 +34,40 @@ require 'header.php';
                     <option value="saab">Noviembre</option>
                     <option value="saab">Diciembre</option>
                 </select>
+                <br>
+                <h3>Día</h3>
+                <input type="number" class="form-control" style="width:40% !important;">
         </div>
             <div class="col-md-6" >
                 <table width="100%" style="position:relative; top:30%;">
                     <tr >
-                        <td align="center"><h4>L</h4></td>
-                        <td align="center"><h4>M</h4></td>
-                        <td align="center"><h4>X</h4></td>
-                        <td align="center"><h4>J</h4></td>
-                        <td align="center"><h4>V</h4></td>
-                        <td align="center"><h4>S</h4></td>
-                        <td align="center"><h4>D</h4></td>
+                        <td align="center"><h4>HORA</h4></td>
+                        <td align="center"><h4>ACCION</h4></td>
                     </tr>
                 </table>
-                <table width="100%" style="position:relative; top:40%;">
+                <br>
+                <table width="100%" style="position:relative; top:40%; left:10%;">
                     <tr>
-                        <td align="center"><h4>27</h4></td>
-                        <td align="center"><h4>28</h4></td>
-                        <td align="center"><h4>29</h4></td>
-                        <td align="center"><h4>30</h4></td>
-                        <td align="center"><h4>31</h4></td>
-                        <td align="center"><a href=""><h4>1</h4></a></td>
-                        <td align="center"><a href=""><h4>2</h4></a></td>
+                        <td align="center"><h4>11:02</h4></td>
+                        <td align="center"><h4>ENTRO A TRABAJAR</h4></td>
                     </tr>
                     <tr>
-                        <td align="center"><a href=""><h4>3</h4></a></td>
-                        <td align="center"><a href=""><h4>4</h4></a></td>
-                        <td align="center"><a href=""><h4>5</h4></a></td>
-                        <td align="center"><a href=""><h4>6</h4></a></td>
-                        <td align="center"><a href=""><h4>7</h4></a></td>
-                        <td align="center"><a href=""><h4>8</h4></a></td>
-                        <td align="center"><a href=""><h4>9</h4></a></td>
+                        <td align="center"><h4>14:00</h4></td>
+                    <td align="center"><h4>PAUSA</h4></td>
                     </tr>
                     <tr>
-                        <td align="center"><a href=""><h4>10</h4></a></td>
-                        <td align="center"><a href=""><h4>11</h4></a></td>
-                        <td align="center"><a href=""><h4>12</h4></a></td>
-                        <td align="center"><a href=""><h4>13</h4></a></td>
-                        <td align="center"><a href=""><h4>14</h4></a></td>
-                        <td align="center"><a href=""><h4>15</h4></a></td>
-                        <td align="center"><a href=""><h4>16</h4></a></td>
+                        <td align="center"><h4>15:30</h4></td>
+                        <td align="center"><h4>ENTRO A TRABAJAR</h4></td>
                     </tr>
-                    <tr>
-                        <td align="center"><a href=""><h4>17</h4></a></td>
-                        <td align="center"><a href=""><h4>18</h4></a></td>
-                        <td align="center"><a href=""><h4>19</h4></a></td>
-                        <td align="center"><a href=""><h4>20</h4></a></td>
-                        <td align="center"><a href=""><h4>21</h4></a></td>
-                        <td align="center"><a href=""><h4>22</h4></a></td>
-                        <td align="center"><a href=""><h4>23</h4></a></td>
-                    </tr>
-                    <tr>
-                        <td align="center"><a href=""><h4>24</h4></a></td>
-                        <td align="center"><a href=""><h4>25</h4></a></td>
-                        <td align="center"><a href=""><h4>26</h4></a></td>
-                        <td align="center"><a href=""><h4>27</h4></a></td>
-                        <td align="center"><a href=""><h4>28</h4></a></td>
-                        <td align="center"><a href=""><h4>29</h4></a></td>
-                        <td align="center"><a href=""><h4>30</h4></a></td>
+                        <td align="center"><h4>20:30</h4></td>
+                    <td align="center"><h4>ME VOY</h4></td>
                     </tr>
                 </table>
             </div>
         </div>
+        <br><br><br><br><br><br><br>
+        <h4 style="text-align: center;"> Tiempo trabajado hoy: 7 <strong>h</strong> 58 <strong>m</strong></h4>
+        <h5 style="text-align:center;"><a href="">Exportar mes a PDF</a></h5>
 
 
     </div>

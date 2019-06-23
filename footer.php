@@ -10,7 +10,7 @@
     <a href="contacto.php">Contacto</a>
     <a href="aboutmeta.php">Sobre Meta</a>
     <?php if ($esAdmin == 1) {
-        echo "<a href='management.php'>Administrar usuarios </a>";
+        echo "<a href='management1.php'>Administrar usuarios </a>";
     } ?>
 </div>
 </div>

@@ -78,8 +78,19 @@ if (isset($_GET['nu'])) {
                     <form action="updateUsuario.php" method="post" enctype="multipart/form-data">
                         Número de horas <br><input type="number" name="usuario" size="30"></br>
                         Concepto <br><textarea name="Text1" cols="60" rows="3"></textarea></br>
-                        <input type="submit" value="Cambiar" name="submit">
+                        <input type="submit" value="Solicitar" name="submit">
                     </form>
+    </div>
+            </div>
+    <div class="row" style="background-color: lightgrey;">
+        <div class="col-md-6" >
+            <h1> Solicitar vacaciones</h1>
+            <form action="updateUsuario.php" method="post" enctype="multipart/form-data" style="margin-bottom:30%;">
+                Día inicio <br><input type="date" name="usuario" size="30"></br>
+                Número de días <br><input type="number" style="width:8%;" name="usuario" size="30"></br>
+                <input type="submit" value="Solicitar" name="submit">
+            </form>
+        </div>
     </div>
 <?php require 'footer.php';
 
